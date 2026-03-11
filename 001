@@ -1,0 +1,13 @@
+from collections import Counter
+def is_valid_walk(walk):
+    if len(walk) == 10:
+        counts = Counter(walk)
+        if counts['e'] == counts['w'] and counts['s'] == counts['n']:
+            print("ЗАЕБИСЬ")
+            return True
+        else: return False
+
+        print(counts)
+    else:
+        print("should return False")
+        return False
