@@ -1,0 +1,8 @@
+def sum_pairs(ints, s):
+    ints_set = set()
+    for n in ints:
+        a = s - n
+        if a in ints_set:
+            print(a, n)
+            return [a, n]
+        ints_set.add(n)
