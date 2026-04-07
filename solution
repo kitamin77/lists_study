@@ -1,0 +1,34 @@
+def solution(args):
+    prev = args[0]
+    parts = []
+    start = args[0]
+    count = 1
+
+    for i in args[1::]:
+        if prev == i - 1:
+            count += 1
+
+
+        else:
+            print(count)
+
+            if start is not None:
+                if count == 1:
+                    parts.append(str(start))
+                elif count == 2:
+                    parts.append(f'{start},{prev}')
+                else:
+                    parts.append(f'{start}-{prev}')
+
+            count = 1
+            start = i
+        prev = i
+    if start is not None:
+        if count == 1:
+            parts.append(str(start))
+        elif count == 2:
+            parts.append(f'{start},{prev}')
+        else:
+            parts.append(f'{start}-{prev}')
+    print(parts)
+    return ','.join(parts)
